@@ -20,7 +20,10 @@ const LoginScreen = () => {
   };
 
   const navigateToRegister = () => {
-    console.log("Navigate to registration screen");
+    const navigateToRegister = () => {
+      navigation.navigate("Registration");
+      console.log("Navigate to registration screen");
+    };
   };
 
   return (

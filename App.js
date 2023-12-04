@@ -14,15 +14,14 @@ export default function App() {
         <Stack.Screen
           name="Login"
           component={LoginScreen}
-          options={{ title: "Login" }}
+          // options={{ title: "Login" }}
         />
         <Stack.Screen
           name="Register"
           component={RegistrationScreen}
-          options={{ title: "Register" }}
+          // options={{ title: "Register" }}
         />
       </Stack.Navigator>
-      <StatusBar style="auto" />
     </NavigationContainer>
   );
 }
