@@ -21,7 +21,7 @@ const LoginScreen = () => {
 
   const navigateToRegister = () => {
     const navigateToRegister = () => {
-      navigation.navigate("Registration");
+      navigation.navigate("RegistrationScreen");
       console.log("Navigate to registration screen");
     };
   };
