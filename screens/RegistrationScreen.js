@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
+  Keyboard,
   ImageBackground,
   SafeAreaView,
 } from "react-native";
@@ -15,8 +16,18 @@ const RegistrationScreen = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
 
+  const handleSubmit = () => {
+    console.log("Registered with:", login, email, password);
+  };
+
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      style={styles.container}
+      onStartShouldSetResponder={() => {
+        Keyboard.dismiss();
+        return false;
+      }}
+    >
       <ImageBackground
         source={require("../assets/background_alps.jpeg")}
         style={styles.absoluteFill}
@@ -53,10 +64,7 @@ const RegistrationScreen = () => {
               </Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => console.log("Register")}
-          >
+          <TouchableOpacity style={styles.button} onPress={handleSubmit}>
             <Text style={styles.buttonText}>Зареєструватися</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => console.log("Navigate to Login")}>
