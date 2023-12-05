@@ -67,8 +67,11 @@ const RegistrationScreen = () => {
           <TouchableOpacity style={styles.button} onPress={handleSubmit}>
             <Text style={styles.buttonText}>Зареєструватися</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => console.log("Navigate to Login")}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Text style={styles.loginText}>Вже є аккаунт? Увійти</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Text>Back to Login</Text>
           </TouchableOpacity>
         </View>
       </ImageBackground>
