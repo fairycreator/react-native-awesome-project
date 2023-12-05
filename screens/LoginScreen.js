@@ -8,26 +8,30 @@ import {
   StatusBar,
   SafeAreaView,
   ImageBackground,
+  Keyboard,
 } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(true);
 
   const handleLogin = () => {
-    console.log("Email:", email, "Password:", password);
+    console.log("Logged in with:", "Email:", email, "Password:", password);
   };
 
   const navigateToRegister = () => {
-    const navigateToRegister = () => {
-      navigation.navigate("RegistrationScreen");
-      console.log("Navigate to registration screen");
-    };
+    navigation.navigate("RegistrationScreen");
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView
+      style={styles.container}
+      onStartShouldSetResponder={() => {
+        Keyboard.dismiss();
+        return false;
+      }}
+    >
       <StatusBar barStyle="dark-content" />
       <ImageBackground
         source={require("../assets/background_alps.jpeg")}
